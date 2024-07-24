@@ -1,0 +1,449 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|c:\\users\\bar\u0027s computer\\desktop\\bankapp.2024\\api\\webapplication1\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|c:\\users\\bar\u0027s computer\\desktop\\bankapp.2024\\api\\webapplication1\\services\\userservice\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|solutionrelative:services\\userservice\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|c:\\users\\bar\u0027s computer\\desktop\\bankapp.2024\\api\\webapplication1\\dto\\userlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|solutionrelative:dto\\userlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|c:\\users\\bar\u0027s computer\\desktop\\bankapp.2024\\api\\webapplication1\\services\\userservice\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|solutionrelative:services\\userservice\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|c:\\users\\bar\u0027s computer\\desktop\\bankapp.2024\\api\\webapplication1\\dto\\userregistrationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|solutionrelative:dto\\userregistrationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|c:\\users\\bar\u0027s computer\\desktop\\bankapp.2024\\api\\webapplication1\\db\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|solutionrelative:db\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|c:\\users\\bar\u0027s computer\\desktop\\bankapp.2024\\api\\webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|c:\\users\\bar\u0027s computer\\desktop\\bankapp.2024\\api\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|c:\\users\\bar\u0027s computer\\desktop\\bankapp.2024\\api\\webapplication1\\helpers\\jwthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|solutionrelative:helpers\\jwthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|c:\\users\\bar\u0027s computer\\desktop\\bankapp.2024\\api\\webapplication1\\helpers\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|solutionrelative:helpers\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|c:\\users\\bar\u0027s computer\\desktop\\bankapp.2024\\api\\webapplication1\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|solutionrelative:dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|c:\\users\\bar\u0027s computer\\desktop\\bankapp.2024\\api\\webapplication1\\services\\transactionservice\\transactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|solutionrelative:services\\transactionservice\\transactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|c:\\users\\bar\u0027s computer\\desktop\\bankapp.2024\\api\\webapplication1\\services\\transactionservice\\itransactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|solutionrelative:services\\transactionservice\\itransactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|c:\\users\\bar\u0027s computer\\desktop\\bankapp.2024\\api\\webapplication1\\services\\accountservice\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|solutionrelative:services\\accountservice\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|c:\\users\\bar\u0027s computer\\desktop\\bankapp.2024\\api\\webapplication1\\controllers\\transactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|solutionrelative:controllers\\transactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|c:\\users\\bar\u0027s computer\\desktop\\bankapp.2024\\api\\webapplication1\\controllers\\bankcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|solutionrelative:controllers\\bankcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|c:\\users\\bar\u0027s computer\\desktop\\bankapp.2024\\api\\webapplication1\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|c:\\users\\bar\u0027s computer\\desktop\\bankapp.2024\\api\\webapplication1\\services\\accountservice\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|solutionrelative:services\\accountservice\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|c:\\users\\bar\u0027s computer\\desktop\\bankapp.2024\\api\\webapplication1\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|c:\\users\\bar\u0027s computer\\desktop\\bankapp.2024\\api\\webapplication1\\models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|solutionrelative:models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|c:\\users\\bar\u0027s computer\\desktop\\bankapp.2024\\api\\webapplication1\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|solutionrelative:models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|c:\\users\\bar\u0027s computer\\desktop\\bankapp.2024\\api\\webapplication1\\dto\\transactiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|solutionrelative:dto\\transactiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|c:\\users\\bar\u0027s computer\\desktop\\bankapp.2024\\api\\webapplication1\\dto\\roleassignmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|solutionrelative:dto\\roleassignmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|c:\\users\\bar\u0027s computer\\desktop\\bankapp.2024\\api\\webapplication1\\dto\\accountdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|solutionrelative:dto\\accountdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|c:\\users\\bar\u0027s computer\\desktop\\bankapp.2024\\api\\webapplication1\\db\\appdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85270A18-03F4-4FA6-BFCB-B4DBCEDC184B}|WebApplication1.csproj|solutionrelative:db\\appdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 18,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-24T22:33:32.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T18:43:05.086Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Transaction.cs",
+              "DocumentMoniker": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Models\\Transaction.cs",
+              "RelativeDocumentMoniker": "Models\\Transaction.cs",
+              "ToolTip": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Models\\Transaction.cs",
+              "RelativeToolTip": "Models\\Transaction.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T18:43:02.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Account.cs",
+              "DocumentMoniker": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Models\\Account.cs",
+              "RelativeDocumentMoniker": "Models\\Account.cs",
+              "ToolTip": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Models\\Account.cs",
+              "RelativeToolTip": "Models\\Account.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T18:42:59.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "JwtSettings.cs",
+              "DocumentMoniker": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Helpers\\JwtSettings.cs",
+              "RelativeDocumentMoniker": "Helpers\\JwtSettings.cs",
+              "ToolTip": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Helpers\\JwtSettings.cs",
+              "RelativeToolTip": "Helpers\\JwtSettings.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T18:42:54.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "JwtHandler.cs",
+              "DocumentMoniker": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Helpers\\JwtHandler.cs",
+              "RelativeDocumentMoniker": "Helpers\\JwtHandler.cs",
+              "ToolTip": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Helpers\\JwtHandler.cs",
+              "RelativeToolTip": "Helpers\\JwtHandler.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAmwBwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T18:42:51.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserRegistrationDto.cs",
+              "DocumentMoniker": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\DTO\\UserRegistrationDto.cs",
+              "RelativeDocumentMoniker": "DTO\\UserRegistrationDto.cs",
+              "ToolTip": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\DTO\\UserRegistrationDto.cs",
+              "RelativeToolTip": "DTO\\UserRegistrationDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T18:42:43.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\DTO\\UserDto.cs",
+              "RelativeDocumentMoniker": "DTO\\UserDto.cs",
+              "ToolTip": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\DTO\\UserDto.cs",
+              "RelativeToolTip": "DTO\\UserDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T18:42:36.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "TransactionDto.cs",
+              "DocumentMoniker": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\DTO\\TransactionDto.cs",
+              "RelativeDocumentMoniker": "DTO\\TransactionDto.cs",
+              "ToolTip": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\DTO\\TransactionDto.cs",
+              "RelativeToolTip": "DTO\\TransactionDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T18:42:33.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "RoleAssignmentDto.cs",
+              "DocumentMoniker": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\DTO\\RoleAssignmentDto.cs",
+              "RelativeDocumentMoniker": "DTO\\RoleAssignmentDto.cs",
+              "ToolTip": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\DTO\\RoleAssignmentDto.cs",
+              "RelativeToolTip": "DTO\\RoleAssignmentDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T18:42:30.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "AccountDto.cs",
+              "DocumentMoniker": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\DTO\\AccountDto.cs",
+              "RelativeDocumentMoniker": "DTO\\AccountDto.cs",
+              "ToolTip": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\DTO\\AccountDto.cs",
+              "RelativeToolTip": "DTO\\AccountDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T18:42:27.404Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AppDb.cs",
+              "DocumentMoniker": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\DB\\AppDb.cs",
+              "RelativeDocumentMoniker": "DB\\AppDb.cs",
+              "ToolTip": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\DB\\AppDb.cs",
+              "RelativeToolTip": "DB\\AppDb.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T18:42:21.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "BankController.cs",
+              "DocumentMoniker": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Controllers\\BankController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BankController.cs",
+              "ToolTip": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Controllers\\BankController.cs",
+              "RelativeToolTip": "Controllers\\BankController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T18:41:07.458Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Services\\UserService\\UserService.cs",
+              "RelativeDocumentMoniker": "Services\\UserService\\UserService.cs",
+              "ToolTip": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Services\\UserService\\UserService.cs",
+              "RelativeToolTip": "Services\\UserService\\UserService.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAAC8AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T18:31:19.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Services\\UserService\\IUserService.cs",
+              "RelativeDocumentMoniker": "Services\\UserService\\IUserService.cs",
+              "ToolTip": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Services\\UserService\\IUserService.cs",
+              "RelativeToolTip": "Services\\UserService\\IUserService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T18:31:00.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserLoginDto.cs",
+              "DocumentMoniker": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\DTO\\UserLoginDto.cs",
+              "RelativeDocumentMoniker": "DTO\\UserLoginDto.cs",
+              "ToolTip": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\DTO\\UserLoginDto.cs",
+              "RelativeToolTip": "DTO\\UserLoginDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T18:29:53.504Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T18:24:08.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAA0wDEAAABNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T18:24:00.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "TransactionController.cs",
+              "DocumentMoniker": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Controllers\\TransactionController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TransactionController.cs",
+              "ToolTip": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Controllers\\TransactionController.cs",
+              "RelativeToolTip": "Controllers\\TransactionController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAQwDUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T18:23:52.237Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAQwDsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T18:23:22.689Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TransactionService.cs",
+              "DocumentMoniker": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Services\\TransactionService\\TransactionService.cs",
+              "RelativeDocumentMoniker": "Services\\TransactionService\\TransactionService.cs",
+              "ToolTip": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Services\\TransactionService\\TransactionService.cs",
+              "RelativeToolTip": "Services\\TransactionService\\TransactionService.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAQwEEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T18:22:48.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ITransactionService.cs",
+              "DocumentMoniker": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Services\\TransactionService\\ITransactionService.cs",
+              "RelativeDocumentMoniker": "Services\\TransactionService\\ITransactionService.cs",
+              "ToolTip": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Services\\TransactionService\\ITransactionService.cs",
+              "RelativeToolTip": "Services\\TransactionService\\ITransactionService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T18:22:14.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AccountService.cs",
+              "DocumentMoniker": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Services\\AccountService\\AccountService.cs",
+              "RelativeDocumentMoniker": "Services\\AccountService\\AccountService.cs",
+              "ToolTip": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Services\\AccountService\\AccountService.cs",
+              "RelativeToolTip": "Services\\AccountService\\AccountService.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAQwEEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T18:22:06.315Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IAccountService.cs",
+              "DocumentMoniker": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Services\\AccountService\\IAccountService.cs",
+              "RelativeDocumentMoniker": "Services\\AccountService\\IAccountService.cs",
+              "ToolTip": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\Services\\AccountService\\IAccountService.cs",
+              "RelativeToolTip": "Services\\AccountService\\IAccountService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T18:21:20.426Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\DB\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "DB\\MappingProfile.cs",
+              "ToolTip": "C:\\Users\\BAR\u0027S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\DB\\MappingProfile.cs",
+              "RelativeToolTip": "DB\\MappingProfile.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T18:20:45.313Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
