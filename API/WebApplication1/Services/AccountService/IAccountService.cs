@@ -8,9 +8,9 @@ namespace WebApplication1.Services.AccountService
     {
         Task<IEnumerable<AccountDto>> GetAccountsAsync();
         Task<IEnumerable<AccountDto>> GetAccountsByUserIdAsync(string userId);
-        Task<AccountDto> GetAccountByIdAsync(string id);
+        Task<AccountDto> GetAccountByIdAsync(int accountId);
         Task<AccountDto> CreateAccountAsync(AccountDto accountDto);
-        Task UpdateAccountAsync(string id, AccountDto accountDto);
-        Task DeleteAccountAsync(string id);
+        Task UpdateAccountAsync(int accountId, AccountDto accountDto);
+        Task DeleteAccountAsync(int accountId);
     }
 }

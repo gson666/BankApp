@@ -12,6 +12,8 @@ namespace WebApplication1.DB
             CreateMap<Account, AccountDto>().ReverseMap();
             CreateMap<Transaction, TransactionDto>().ReverseMap();
             CreateMap<UserRegistrationDto, User>();
+            CreateMap<ChatMessage, ChatMessageDto>().ReverseMap();
+
         }
     }
 }

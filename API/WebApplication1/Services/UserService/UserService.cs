@@ -51,7 +51,7 @@ namespace WebApplication1.Services.UserService
             var result = await _signInManager.CheckPasswordSignInAsync(user, password, false);
             if (result.Succeeded)
             {
-                return _jwtHandler.GenerateJwtToken(user);
+                return await _jwtHandler.GenerateJwtToken(user);
             }
             throw new Exception("Invalid email or password");
 
@@ -81,6 +81,36 @@ namespace WebApplication1.Services.UserService
         public async Task<IEnumerable<User>> GetUsersAsync()
         {
             return await _userManager.Users.ToListAsync();
+        }
+
+        //only for test
+        public async Task SeedAdminUserAsync()
+        {
+            var adminEmail = "admin@example.com";
+            var adminUser = await _userManager.FindByEmailAsync(adminEmail);
+
+            if (adminUser == null)
+            {
+                adminUser = new User
+                {
+                    UserName = "admin",
+                    Email = adminEmail,
+                    FirstName = "Admin",
+                    LastName = "User"
+                };
+
+                var result = await _userManager.CreateAsync(adminUser, "Admin@123");
+
+                if (result.Succeeded)
+                {
+                    if (!await _roleManager.RoleExistsAsync("Admin"))
+                    {
+                        await _roleManager.CreateAsync(new IdentityRole("Admin"));
+                    }
+
+                    await _userManager.AddToRoleAsync(adminUser, "Admin");
+                }
+            }
         }
     }
 }

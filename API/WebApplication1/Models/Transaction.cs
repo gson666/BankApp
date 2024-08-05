@@ -1,20 +1,26 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApplication1.Models
 {
     public class Transaction
     {
-        public string Id { get; set; } = string.Empty;
+        public int TransactionId { get; set; }
         public string Name { get; set; } = string.Empty;
 
         [Column(TypeName = "decimal(18,2)")]
         public decimal Amount { get; set; }
 
-        public string Date { get; set; } = string.Empty;
-        public string PaymentChannel { get; set; } = string.Empty;
+        public PaymentChannel PaymentChannel { get; set; }
         public string Category { get; set; } = string.Empty;
         public string Type { get; set; } = string.Empty;
-        public string SenderBankId { get; set; } = string.Empty;
-        public string ReceiverBankId { get; set; } = string.Empty;
+        public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
+
+        public int SenderAccountId { get; set; }
+        public Account SenderAccount { get; set; }
+
+        public int ReceiverAccountId { get; set; }
+        public Account ReceiverAccount { get; set; }
     }
 }

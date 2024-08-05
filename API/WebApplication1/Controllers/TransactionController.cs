@@ -23,9 +23,11 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetTransaction(string id)
+        public async Task<IActionResult> GetTransaction(int id)
         {
             var transaction = await _transactionService.GetTransactionByIdAsync(id);
+            if (transaction == null)
+                return NotFound();
             return Ok(transaction);
         }
 
@@ -33,19 +35,27 @@ namespace WebApplication1.Controllers
         public async Task<IActionResult> CreateTransaction(TransactionDto transactionDto)
         {
             var transaction = await _transactionService.CreateTransactionAsync(transactionDto);
-            return CreatedAtAction(nameof(GetTransaction), new { id = transaction.Id }, transaction);
+            return CreatedAtAction(nameof(GetTransaction), new { id = transaction.TransactionId }, transaction);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateTransaction(string id, TransactionDto transactionDto)
+        public async Task<IActionResult> UpdateTransaction(int id, TransactionDto transactionDto)
         {
+            var existingTransaction = await _transactionService.GetTransactionByIdAsync(id);
+            if (existingTransaction == null)
+                return NotFound();
+
             await _transactionService.UpdateTransactionAsync(id, transactionDto);
             return NoContent();
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteTransaction(string id)
+        public async Task<IActionResult> DeleteTransaction(int id)
         {
+            var existingTransaction = await _transactionService.GetTransactionByIdAsync(id);
+            if (existingTransaction == null)
+                return NotFound();
+
             await _transactionService.DeleteTransactionAsync(id);
             return NoContent();
         }

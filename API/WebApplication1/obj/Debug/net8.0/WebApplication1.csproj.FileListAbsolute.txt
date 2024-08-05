@@ -142,3 +142,14 @@ C:\Users\BAR'S COMPUTER\Desktop\BankApp.2024\API\WebApplication1\bin\Debug\net8.
 C:\Users\BAR'S COMPUTER\Desktop\BankApp.2024\API\WebApplication1\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\BAR'S COMPUTER\Desktop\BankApp.2024\API\WebApplication1\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\BAR'S COMPUTER\Desktop\BankApp.2024\API\WebApplication1\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\BAR'S COMPUTER\Desktop\BankApp.2024\API\WebApplication1\obj\Debug\net8.0\WebApplication1.sourcelink.json
+C:\Users\BAR'S COMPUTER\Desktop\BankApp.2024\API\WebApplication1\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Users\BAR'S COMPUTER\Desktop\BankApp.2024\API\WebApplication1\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+C:\Users\BAR'S COMPUTER\Desktop\BankApp.2024\API\WebApplication1\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Common.dll
+C:\Users\BAR'S COMPUTER\Desktop\BankApp.2024\API\WebApplication1\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.dll
+C:\Users\BAR'S COMPUTER\Desktop\BankApp.2024\API\WebApplication1\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+C:\Users\BAR'S COMPUTER\Desktop\BankApp.2024\API\WebApplication1\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Users\BAR'S COMPUTER\Desktop\BankApp.2024\API\WebApplication1\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+C:\Users\BAR'S COMPUTER\Desktop\BankApp.2024\API\WebApplication1\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\BAR'S COMPUTER\Desktop\BankApp.2024\API\WebApplication1\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
+C:\Users\BAR'S COMPUTER\Desktop\BankApp.2024\API\WebApplication1\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll

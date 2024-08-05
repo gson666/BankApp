@@ -1,10 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApplication1.Models
 {
     public class Account
     {
-        public string Id { get; set; } = string.Empty;
+        public int AccountId { get; set; }
         public string Name { get; set; } = string.Empty;
 
         [Column(TypeName = "decimal(18,2)")]
@@ -13,11 +15,13 @@ namespace WebApplication1.Models
         [Column(TypeName = "decimal(18,2)")]
         public decimal AvailAbleBalance { get; set; }
 
-        public string Mask { get; set; } = string.Empty;
         public string InstitutionId { get; set; } = string.Empty;
         public string Type { get; set; } = string.Empty;
-        public string Subtype { get; set; } = string.Empty;
-        public string ShareableId { get; set; } = string.Empty;
+
         public string UserId { get; set; } = string.Empty;
+        public User User { get; set; }
+
+        public ICollection<Transaction> SenderTransactions { get; set; } = new List<Transaction>();
+        public ICollection<Transaction> ReceiverTransactions { get; set; } = new List<Transaction>();
     }
 }

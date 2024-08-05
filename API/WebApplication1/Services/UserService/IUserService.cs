@@ -9,5 +9,7 @@ namespace WebApplication1.Services.UserService
         Task<User> CreateUserAsync(UserRegistrationDto userDto);
         Task<string> AuthenticateAsync(string userName, string password);
         Task AssignRoleAsync(User user, string role);
+        Task SeedAdminUserAsync();
+
     }
 }

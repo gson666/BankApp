@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using WebApplication1.DTO;
+using WebApplication1.Models;
 using WebApplication1.Services.AccountService;
 
 namespace WebApplication1.Controllers
@@ -23,7 +25,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetAccount(string id)
+        public async Task<IActionResult> GetAccount(int id)
         {
             var account = await _accountService.GetAccountByIdAsync(id);
             if (account == null)
@@ -32,16 +34,19 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
+        [Authorize(Policy = "AdminPolicy")]
         public async Task<IActionResult> CreateAccount(AccountDto accountDto)
         {
+            accountDto.InstitutionId = BankType.Id;
             var account = await _accountService.CreateAccountAsync(accountDto);
-            return CreatedAtAction(nameof(GetAccount), new { id = account.Id }, account);
+            account.InstitutionId = accountDto.InstitutionId;
+            return CreatedAtAction(nameof(GetAccount), new { id = account.AccountId }, account);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateAccount(string id, AccountDto accountDto)
+        public async Task<IActionResult> UpdateAccount(int id, AccountDto accountDto)
         {
-            if (id != accountDto.Id)
+            if (id != accountDto.AccountId)
             {
                 return BadRequest();
             }
@@ -50,7 +55,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAccount(string id)
+        public async Task<IActionResult> DeleteAccount(int id)
         {
             await _accountService.DeleteAccountAsync(id);
             return NoContent();

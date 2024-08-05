@@ -48,7 +48,7 @@ namespace WebApplication1.Controllers
         public async Task<ActionResult<string>> Login(UserLoginDto userDto)
         {
             var token = await _userService.AuthenticateAsync(userDto.UserName, userDto.Password);
-            return Ok(new { Token = token });
+            return Ok(new { Token = token ,userName = userDto.UserName });
         }
 
         [HttpPost("assign-role")]

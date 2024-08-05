@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -10,15 +11,18 @@ namespace WebApplication1.Helpers
     public class JwtHandler
     {
         private readonly JwtSettings _jwtSettings;
-        public JwtHandler(IOptions<JwtSettings> settings)
+        private readonly UserManager<User> _userManager;
+
+        public JwtHandler(IOptions<JwtSettings> settings, UserManager<User> userManager)
         {
             _jwtSettings = settings.Value;
+            _userManager = userManager;
         }
 
-        public string GenerateJwtToken(User user)
+        public async Task<string> GenerateJwtToken(User user)
         {
             var signingCredentials = GetSigningCredentials();
-            var claims = GetClaims(user);
+            var claims = await GetClaims(user);
             var tokenOptions = new JwtSecurityToken(
                 issuer: _jwtSettings.ValidIssuer,
                 audience: _jwtSettings.ValidAudience,
@@ -37,13 +41,17 @@ namespace WebApplication1.Helpers
             return new SigningCredentials(secret, SecurityAlgorithms.HmacSha256Signature);
         }
 
-        private List<Claim> GetClaims(User user)
+        private async Task<List<Claim>> GetClaims(User user)
         {
-            return new List<Claim>
+            var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, user.UserName!),
                 new Claim(ClaimTypes.NameIdentifier, user.Id)
             };
+            var userRoles =await _userManager.GetRolesAsync(user);
+            claims.AddRange(userRoles.Select(role => new Claim(ClaimTypes.Role, role)));
+
+            return claims;
         }
     }
 }

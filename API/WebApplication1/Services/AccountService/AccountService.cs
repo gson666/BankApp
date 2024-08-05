@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using WebApplication1.DB;
 using WebApplication1.DTO;
 using WebApplication1.Models;
@@ -30,9 +32,9 @@ namespace WebApplication1.Services.AccountService
             return _mapper.Map<IEnumerable<AccountDto>>(accounts);
         }
 
-        public async Task<AccountDto> GetAccountByIdAsync(string id)
+        public async Task<AccountDto> GetAccountByIdAsync(int accountId)
         {
-            var account = await _context.Accounts.FindAsync(id);
+            var account = await _context.Accounts.FindAsync(accountId);
             return _mapper.Map<AccountDto>(account);
         }
 
@@ -44,18 +46,18 @@ namespace WebApplication1.Services.AccountService
             return _mapper.Map<AccountDto>(account);
         }
 
-        public async Task UpdateAccountAsync(string id, AccountDto accountDto)
+        public async Task UpdateAccountAsync(int accountId, AccountDto accountDto)
         {
-            var account = await _context.Accounts.FindAsync(id);
+            var account = await _context.Accounts.FindAsync(accountId);
             if (account == null) throw new Exception("Account not found");
 
             _mapper.Map(accountDto, account);
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAccountAsync(string id)
+        public async Task DeleteAccountAsync(int accountId)
         {
-            var account = await _context.Accounts.FindAsync(id);
+            var account = await _context.Accounts.FindAsync(accountId);
             if (account == null) throw new Exception("Account not found");
 
             _context.Accounts.Remove(account);
