@@ -1,9 +1,16 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using WebApplication1.Helpers;
 using WebApplication1.Models;
 using WebApplication1.DTO;
+using WebApplication1.DB;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using System.Diagnostics;
 
 namespace WebApplication1.Services.UserService
 {
@@ -14,14 +21,16 @@ namespace WebApplication1.Services.UserService
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly JwtHandler _jwtHandler;
         private readonly IMapper _mapper;
+        private readonly AppDb _context;
 
-        public UserService(UserManager<User> userManager, SignInManager<User> signInManager, RoleManager<IdentityRole> roleManager, JwtHandler jwtHandler, IMapper mapper)
+        public UserService(UserManager<User> userManager, SignInManager<User> signInManager, RoleManager<IdentityRole> roleManager, JwtHandler jwtHandler, IMapper mapper, AppDb context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
             _jwtHandler = jwtHandler;
             _mapper = mapper;
+            _context = context;
         }
 
         public async Task AssignRoleAsync(User user, string role)
@@ -29,7 +38,7 @@ namespace WebApplication1.Services.UserService
             if (!await _roleManager.RoleExistsAsync(role))
             {
                 var roleResult = await _roleManager.CreateAsync(new IdentityRole(role));
-                if (roleResult.Succeeded)
+                if (!roleResult.Succeeded)
                 {
                     throw new Exception("Failed to create role");
                 }
@@ -54,36 +63,45 @@ namespace WebApplication1.Services.UserService
                 return await _jwtHandler.GenerateJwtToken(user);
             }
             throw new Exception("Invalid email or password");
-
         }
 
-        public async Task<User> CreateUserAsync(UserRegistrationDto userDto)
+        public async Task<UserDto> CreateUserAsync(UserRegistrationDto userDto)
         {
             var user = _mapper.Map<User>(userDto);
             var result = await _userManager.CreateAsync(user, userDto.Password);
             if (result.Succeeded && user != null)
             {
-                return user;
+                await _userManager.AddToRoleAsync(user, "User");
+                return _mapper.Map<UserDto>(user);
             }
             throw new InvalidOperationException(string.Join(", ", result.Errors.Select(e => e.Description)));
         }
 
-        public async Task<User> GetUserByIdAsync(string id)
+        public async Task<UserDto> GetUserByIdAsync(string userId, bool includeDeleted = false)
         {
-            var user = await _userManager.FindByIdAsync(id);
-            if (user == null)
+            var query = _context.Users.AsQueryable();
+            if (!includeDeleted)
             {
-                throw new InvalidOperationException("Not Found");
+                query = query.Where(u => !u.IsDeleted);
             }
-            return user;
+
+            var user = await query.FirstOrDefaultAsync(u => u.Id == userId);
+            return _mapper.Map<UserDto>(user);
         }
 
-        public async Task<IEnumerable<User>> GetUsersAsync()
+        public async Task<IEnumerable<UserDto>> GetUsersAsync(bool includeDeleted = false)
         {
-            return await _userManager.Users.ToListAsync();
+            var query = _context.Users.AsQueryable();
+            if (!includeDeleted)
+            {
+                query = query.Where(u => !u.IsDeleted);
+            }
+
+            var users = await query.ToListAsync();
+            return _mapper.Map<IEnumerable<UserDto>>(users);
         }
 
-        //only for test
+        // Only for testing
         public async Task SeedAdminUserAsync()
         {
             var adminEmail = "admin@example.com";
@@ -112,5 +130,84 @@ namespace WebApplication1.Services.UserService
                 }
             }
         }
+
+        public async Task<int?> CountUsers()
+        {
+            var users = await _userManager.Users.ToListAsync();
+            int numberOfUsers = users.Count;
+            return numberOfUsers;
+        }
+
+        public async Task<UserDto> DeactivateUser(string userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null) throw new Exception("User not found");
+
+            user.IsDeleted = true;
+            await _userManager.UpdateAsync(user);
+
+            return _mapper.Map<UserDto>(user);
+        }
+        public async Task<UserDto> ActivateUser(string userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null) throw new Exception("User not found");
+            user.IsDeleted = false;
+            await _userManager.UpdateAsync(user);
+
+            return _mapper.Map<UserDto>(user);
+        }
+        //unavailable method for now 
+        public async Task<UserDto> DeleteUser(string userId)
+        {
+            var userToDelete = await _userManager.FindByIdAsync(userId);
+            if (userToDelete == null) throw new Exception("User not found");
+
+            userToDelete.IsDeleted = true;
+            await _userManager.UpdateAsync(userToDelete);
+
+            return _mapper.Map<UserDto>(userToDelete);
+        }
+
+        public async Task<UserDto> UpdateUserAsync(string userId, UserDto userDto)
+        {
+            var userToUpdate = await _userManager.FindByIdAsync(userId);
+            if (userToUpdate == null) throw new Exception("User not found");
+
+            try
+            {
+                userToUpdate.UserName = userDto.UserName;
+                userToUpdate.FirstName = userDto.FirstName;
+                userToUpdate.LastName = userDto.LastName;
+                userToUpdate.Email = userDto.Email;
+                userToUpdate.userImage = userDto.userImage;
+
+
+                var result = await _userManager.UpdateAsync(userToUpdate);
+                if (result.Succeeded)
+                {
+                    _mapper.Map(userToUpdate, userDto);
+                }
+                else
+                {
+                    throw new InvalidOperationException(string.Join(", ", result.Errors.Select(e => e.Description)));
+                }
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                throw new InvalidOperationException("The user was updated by another process. Please reload the user and try again.");
+            }
+
+            return userDto;
+        }
+        public async Task<UserDto> PermanentDeleteUser(string userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null) throw new Exception("N/A");
+            await _userManager.DeleteAsync(user);
+
+            return _mapper.Map<UserDto>(user);
+        }
+
     }
 }

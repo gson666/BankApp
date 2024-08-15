@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection.Emit;
 using WebApplication1.Models;
 
 namespace WebApplication1.DB
@@ -15,6 +16,7 @@ namespace WebApplication1.DB
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
 
             builder.Entity<Account>()
                 .HasMany(a => a.SenderTransactions)

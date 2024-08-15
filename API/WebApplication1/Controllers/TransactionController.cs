@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using WebApplication1.DTO;
 using WebApplication1.Services.TransactionService;
 
@@ -16,6 +17,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet]
+        [Authorize(Policy = "AdminPolicy")]
         public async Task<IActionResult> GetTransactions()
         {
             var transactions = await _transactionService.GetTransactionsAsync();
@@ -23,6 +25,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<IActionResult> GetTransaction(int id)
         {
             var transaction = await _transactionService.GetTransactionByIdAsync(id);
@@ -32,6 +35,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> CreateTransaction(TransactionDto transactionDto)
         {
             var transaction = await _transactionService.CreateTransactionAsync(transactionDto);
@@ -39,6 +43,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Policy = "AdminPolicy")]
         public async Task<IActionResult> UpdateTransaction(int id, TransactionDto transactionDto)
         {
             var existingTransaction = await _transactionService.GetTransactionByIdAsync(id);
@@ -50,6 +55,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Policy = "AdminPolicy")]
         public async Task<IActionResult> DeleteTransaction(int id)
         {
             var existingTransaction = await _transactionService.GetTransactionByIdAsync(id);

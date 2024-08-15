@@ -18,16 +18,16 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAccounts()
+        public async Task<IActionResult> GetAccounts([FromQuery] bool includeDeleted = false)
         {
-            var accounts = await _accountService.GetAccountsAsync();
+            var accounts = await _accountService.GetAccountsAsync(includeDeleted);
             return Ok(accounts);
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetAccount(int id)
+        public async Task<IActionResult> GetAccount(int id, [FromQuery] bool includeDeleted = false)
         {
-            var account = await _accountService.GetAccountByIdAsync(id);
+            var account = await _accountService.GetAccountByIdAsync(id, includeDeleted);
             if (account == null)
                 return NotFound();
             return Ok(account);
@@ -59,6 +59,28 @@ namespace WebApplication1.Controllers
         {
             await _accountService.DeleteAccountAsync(id);
             return NoContent();
+        }
+
+        [HttpPut("deactivate/{id}")]
+        [Authorize(Policy = "AdminPolicy")]
+        public async Task<IActionResult> DeactivateAccount(int id)
+        {
+            var account = await _accountService.DeactivateAccount(id);
+            return Ok(new { account });
+        }
+        [HttpPut("activate/{id}")]
+        [Authorize(Policy = "AdminPolicy")]
+        public async Task<IActionResult> ActivateAccount(int id)
+        {
+            var account = await _accountService.ActivateAccount(id);
+            return Ok(new { account });
+        }
+
+        [HttpGet("count-accounts")]
+        [Authorize(Policy = "AdminPolicy")]
+        public async Task<IActionResult> CountAccounts()
+        {
+            return Ok(await _accountService.CountAccounts());
         }
     }
 }

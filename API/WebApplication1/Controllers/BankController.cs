@@ -20,21 +20,23 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet("user/{userId}/accounts")]
-        public async Task<IActionResult> GetAccountsByUserId(string userId)
+        [Authorize]
+        public async Task<IActionResult> GetAccountsByUserId(string userId, [FromQuery] bool includeDeleted = false)
         {
-            var accounts = await _accountService.GetAccountsByUserIdAsync(userId);
+            var accounts = await _accountService.GetAccountsByUserIdAsync(userId, includeDeleted);
             return Ok(accounts);
         }
 
         [HttpGet("accounts/{accountId}")]
-        public async Task<IActionResult> GetAccountById(int accountId)
+        public async Task<IActionResult> GetAccountById(int accountId, [FromQuery] bool includeDeleted = false)
         {
-            var account = await _accountService.GetAccountByIdAsync(accountId);
+            var account = await _accountService.GetAccountByIdAsync(accountId, includeDeleted);
             var transactions = await _transactionService.GetTransactionsByAccountIdAsync(accountId);
             return Ok(new { account, transactions });
         }
 
         [HttpPost("accounts")]
+        [Authorize(Policy = "AdminPolicy")]
         public async Task<IActionResult> CreateAccount(AccountDto accountDto)
         {
             var createdAccount = await _accountService.CreateAccountAsync(accountDto);
@@ -42,6 +44,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPut("accounts/{accountId}")]
+        [Authorize]
         public async Task<IActionResult> UpdateAccount(int accountId, AccountDto accountDto)
         {
             if (accountId != accountDto.AccountId)
@@ -54,13 +57,23 @@ namespace WebApplication1.Controllers
         }
 
         [HttpDelete("accounts/{accountId}")]
+        [Authorize(Policy = "AdminPolicy")]
         public async Task<IActionResult> DeleteAccount(int accountId)
         {
             await _accountService.DeleteAccountAsync(accountId);
             return NoContent();
         }
 
+        [HttpPut("deactivate/{accountId}")]
+        [Authorize(Policy = "AdminPolicy")]
+        public async Task<IActionResult> DeactivateAccount(int accountId)
+        {
+            var account = await _accountService.DeactivateAccount(accountId);
+            return Ok(account);
+        }
+
         [HttpPost("transactions")]
+        [Authorize]
         public async Task<IActionResult> CreateTransaction(TransactionDto transactionDto)
         {
             var createdTransaction = await _transactionService.CreateTransactionAsync(transactionDto);
@@ -68,11 +81,13 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet("accounts/{accountId}/transactions")]
+        [Authorize]
         public async Task<IActionResult> GetTransactionsByAccountId(int accountId)
         {
             var transactions = await _transactionService.GetTransactionsByAccountIdAsync(accountId);
             return Ok(transactions);
         }
+
         [Authorize]
         [HttpPost("transfer")]
         public async Task<IActionResult> TransferMoney(TransactionDto transactionDto)
@@ -92,7 +107,28 @@ namespace WebApplication1.Controllers
                 return BadRequest(new { message = ex.Message });
             }
         }
-    }
+        [Authorize(Policy = "AdminPolicy")]
+        [HttpPost("accounts/{accountId}/deposit")]
+        public async Task<IActionResult> DepositForAccount(int accountId,[FromBody]decimal amount)
+        {
+            var updatedBalance = await _accountService.DepositForClient(accountId, amount);
+            if(updatedBalance == null)
+            {
+                return NoContent();
+            }
+            return Ok(new {AccountId = accountId, NewBalance = updatedBalance});
+        }
+        [Authorize(Policy = "AdminPolicy")]
+        [HttpPost("accounts/{accountId}/withdraw")]
+        public async Task<IActionResult> WithdrawFromAccount(int accountId, [FromBody] decimal amount)
+        {
+            var updatedBalance = await _accountService.WithdrawForClient(accountId, amount);
+            if (updatedBalance == null)
+            {
+                return NotFound(new { message = "Account not found" });
+            }
 
-    
+            return Ok(new { AccountId = accountId, NewBalance = updatedBalance });
+        }
+    }
 }

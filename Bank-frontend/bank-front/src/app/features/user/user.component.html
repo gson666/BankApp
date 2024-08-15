@@ -1,0 +1,15 @@
+<!-- src/app/features/user/user.component.html -->
+<div class="user-container">
+    <h1>Users</h1>
+    <mat-list>
+      <mat-list-item *ngFor="let user of users" class="user-card">
+        <div class="user-details">
+          <h3 matLine>{{ user.userName }}</h3>
+          <p matLine><strong>Email:</strong> {{ user.email }}</p>
+          <p matLine><strong>First Name:</strong> {{ user.firstName }}</p>
+          <p matLine><strong>Last Name:</strong> {{ user.lastName }}</p>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  

@@ -1,0 +1,10 @@
+<div>
+    <h1>Accounts</h1>
+    <mat-list>
+      <mat-list-item *ngFor="let account of accounts">
+        <h3 matLine>{{ account.name }}</h3>
+        <p matLine>{{ account.currentBalance | currency }}</p>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  

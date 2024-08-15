@@ -46,7 +46,8 @@ namespace WebApplication1.Helpers
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, user.UserName!),
-                new Claim(ClaimTypes.NameIdentifier, user.Id)
+                new Claim(ClaimTypes.NameIdentifier, user.Id),
+                new Claim(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString())
             };
             var userRoles =await _userManager.GetRolesAsync(user);
             claims.AddRange(userRoles.Select(role => new Claim(ClaimTypes.Role, role)));
