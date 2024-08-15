@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/jaliDFdksM=",
+  "dgSpecHash": "hi07IV2iz3M=",
   "success": true,
-  "projectFilePath": "C:\\Users\\BAR'S COMPUTER\\Desktop\\BankApp.2024\\API\\WebApplication1\\WebApplication1.csproj",
+  "projectFilePath": "C:\\Users\\BAR'S COMPUTER\\Desktop\\bank-front-updated\\BankApp\\API\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\BAR'S COMPUTER\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\BAR'S COMPUTER\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
