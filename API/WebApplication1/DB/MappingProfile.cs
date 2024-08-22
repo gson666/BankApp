@@ -13,12 +13,16 @@ namespace WebApplication1.DB
             //CreateMap<Transaction, TransactionDto>().ReverseMap();
             //CreateMap<UserRegistrationDto, User>();
             //CreateMap<ChatMessage, ChatMessageDto>().ReverseMap();
-            CreateMap<User, UserDto>().ReverseMap();
+            CreateMap<User, UserDto>()
+            .ForMember(dest => dest.Accounts, opt => opt.MapFrom(src => src.Accounts))
+            .ReverseMap()
+            .ForMember(dest => dest.Accounts, opt => opt.Ignore());
             CreateMap<Account, AccountDto>().ReverseMap();
+            CreateMap<UserKey, UserKeyDto>().ReverseMap();
             CreateMap<Transaction, TransactionDto>()
-                .ForMember(dest => dest.PaymentChannel, opt => opt.MapFrom(src => src.PaymentChannel.ToString()))
-                .ReverseMap()
-                .ForMember(dest => dest.PaymentChannel, opt => opt.MapFrom(src => Enum.Parse<PaymentChannel>(src.PaymentChannel)));
+    .           ForMember(dest => dest.PaymentChannel, opt => opt.MapFrom(src => src.PaymentChannel.ToString()))
+    .           ReverseMap()
+    .           ForMember(dest => dest.PaymentChannel, opt => opt.MapFrom(src => Enum.Parse<PaymentChannel>(src.PaymentChannel)));
             CreateMap<UserRegistrationDto, User>();
             CreateMap<ChatMessage, ChatMessageDto>().ReverseMap();
 

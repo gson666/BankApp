@@ -1,4 +1,6 @@
-﻿namespace WebApplication1.DTO
+﻿using WebApplication1.Models;
+
+namespace WebApplication1.DTO
 {
     public class UserDto
     {
@@ -10,5 +12,6 @@
         public string? Password { get; set; }
         public bool IsDeleted { get; set; } = false;
         public string? userImage {  get; set; }
+        public List<AccountDto> Accounts { get; set; } = new List<AccountDto>();  
     }
 }

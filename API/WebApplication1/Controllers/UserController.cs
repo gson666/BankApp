@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.DTO;
 using WebApplication1.Models;
+using WebApplication1.Services.KeyService;
 using WebApplication1.Services.UserService;
 
 namespace WebApplication1.Controllers
@@ -11,10 +12,11 @@ namespace WebApplication1.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
-
-        public UserController(IUserService userService)
+        private readonly IKeyService _keyService;
+        public UserController(IUserService userService, IKeyService keyService)
         {
             _userService = userService;
+            _keyService = keyService;
         }
 
         [HttpGet]
@@ -25,8 +27,8 @@ namespace WebApplication1.Controllers
             return Ok(users);
         }
 
+        [Authorize]
         [HttpGet("{userId}")]
-        [Authorize(Policy = "AdminPolicy")]
         public async Task<IActionResult> GetUserById(string userId, [FromQuery] bool includeDeleted = false)
         {
             var user = await _userService.GetUserByIdAsync(userId, includeDeleted);
@@ -44,8 +46,9 @@ namespace WebApplication1.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<string>> Login(UserLoginDto userDto)
         {
-            var token = await _userService.AuthenticateAsync(userDto.UserName, userDto.Password);
-            return Ok(new { Token = token, UserName = userDto.UserName });
+            var (token,key) = await _userService.AuthenticateAsync(userDto.UserName, userDto.Password);
+            
+            return Ok(new { Token = token, userName = userDto.UserName, Key = key });
         }
 
         [HttpPost("assign-role")]
@@ -58,7 +61,7 @@ namespace WebApplication1.Controllers
                 return NotFound();
             }
             var userModel = new User { Id = user.Id, UserName = user.UserName };
-            await _userService.AssignRoleAsync(userModel, role);
+            await _userService.AssignRoleAsync(userId, role);
             return Ok();
         }
 
@@ -93,11 +96,11 @@ namespace WebApplication1.Controllers
         }
         [HttpPut("{userId}")]
         [Authorize(Policy = "AdminPolicy")]
-        public async Task<IActionResult> UpdateUser(string userId, [FromBody] UserDto userDto)
+        public async Task<IActionResult> UpdateUser(string userId, [FromForm] UserDto userDto,[FromForm]IFormFile? profileImage)
         {
             try
             {
-                var updatedUser = await _userService.UpdateUserAsync(userId, userDto);
+                var updatedUser = await _userService.UpdateUserAsync(userId, userDto,profileImage);
                 return Ok(updatedUser);
             }
             catch (Exception ex)

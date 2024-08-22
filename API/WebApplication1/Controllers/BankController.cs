@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using WebApplication1.DTO;
 using WebApplication1.Services.AccountService;
+using WebApplication1.Services.KeyService;
 using WebApplication1.Services.TransactionService;
 
 namespace WebApplication1.Controllers
@@ -12,11 +14,13 @@ namespace WebApplication1.Controllers
     {
         private readonly IAccountService _accountService;
         private readonly ITransactionService _transactionService;
-
-        public BankController(IAccountService accountService, ITransactionService transactionService)
+        private readonly IKeyService _keyService;
+        
+        public BankController(IAccountService accountService, ITransactionService transactionService,IKeyService keyService)
         {
             _accountService = accountService;
             _transactionService = transactionService;
+            _keyService = keyService;
         }
 
         [HttpGet("user/{userId}/accounts")]
@@ -97,7 +101,7 @@ namespace WebApplication1.Controllers
 
             try
             {
-                var transaction = await _transactionService.TransferMoneyAsync(
+                var transaction = await _transactionService.TransferMoneyAsync(transactionDto.Name,
                     transactionDto.SenderAccountId, transactionDto.ReceiverAccountId, transactionDto.Amount,
                     transactionDto.PaymentChannel, transactionDto.Category, transactionDto.Type);
                 return Ok(transaction);
@@ -111,6 +115,8 @@ namespace WebApplication1.Controllers
         [HttpPost("accounts/{accountId}/deposit")]
         public async Task<IActionResult> DepositForAccount(int accountId,[FromBody]decimal amount)
         {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
             var updatedBalance = await _accountService.DepositForClient(accountId, amount);
             if(updatedBalance == null)
             {
@@ -118,6 +124,38 @@ namespace WebApplication1.Controllers
             }
             return Ok(new {AccountId = accountId, NewBalance = updatedBalance});
         }
+
+        [Authorize]
+        [HttpPost("accounts/{accountId}/user-deposit")]
+        public async Task<IActionResult> UserSelfDeposit(int accountId, [FromBody] decimal amount, [FromQuery] string userId, [FromQuery] string key)
+        {
+            if (string.IsNullOrEmpty(userId))
+            {
+                return BadRequest(new { message = "User ID is required" });
+            }
+
+            if (string.IsNullOrEmpty(key))
+            {
+                return BadRequest(new { message = "Key is required" });
+            }
+
+            var isValidKey = await _keyService.ValidateKeyAsync(userId, key);
+            if (!isValidKey)
+            {
+                return BadRequest(new { message = "Invalid or expired key" });
+            }
+
+            var updatedBalance = await _accountService.DepositForClient(accountId, amount);
+            if (updatedBalance == null)
+            {
+                return NotFound(new { message = "Account not found or operation failed" });
+            }
+
+            await _keyService.InvalidateKeyAsync(userId, key);
+
+            return Ok(new { AccountId = accountId, NewBalance = updatedBalance });
+        }
+
         [Authorize(Policy = "AdminPolicy")]
         [HttpPost("accounts/{accountId}/withdraw")]
         public async Task<IActionResult> WithdrawFromAccount(int accountId, [FromBody] decimal amount)

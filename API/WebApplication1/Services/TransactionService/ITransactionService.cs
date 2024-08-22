@@ -13,6 +13,6 @@ namespace WebApplication1.Services.TransactionService
         Task UpdateTransactionAsync(int transactionId, TransactionDto transactionDto);
         Task DeleteTransactionAsync(int transactionId);
         Task<IEnumerable<TransactionDto>> GetTransactionsByAccountIdAsync(int accountId);
-        Task<TransactionDto> TransferMoneyAsync(int senderAccountId, int receiverAccountId, decimal amount, string paymentChannel, string category, string type);
+        Task<TransactionDto> TransferMoneyAsync(string name,int senderAccountId, int receiverAccountId, decimal amount, string paymentChannel, string category, string type);
     }
 }

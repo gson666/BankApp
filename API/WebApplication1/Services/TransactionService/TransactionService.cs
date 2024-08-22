@@ -65,7 +65,7 @@ namespace WebApplication1.Services.TransactionService
             return _mapper.Map<IEnumerable<TransactionDto>>(transactions);
         }
 
-        public async Task<TransactionDto> TransferMoneyAsync(int senderAccountId, int receiverAccountId, decimal amount, string paymentChannel, string category, string type)
+        public async Task<TransactionDto> TransferMoneyAsync(string name,int senderAccountId, int receiverAccountId, decimal amount, string paymentChannel, string category, string type)
         {
             var senderAccount = await _context.Accounts.FindAsync(senderAccountId);
             var receiverAccount = await _context.Accounts.FindAsync(receiverAccountId);
@@ -84,7 +84,7 @@ namespace WebApplication1.Services.TransactionService
 
                 var newTransaction = new Transaction
                 {
-                    Name = "Transfer",
+                    Name = "",
                     Amount = amount,
                     PaymentChannel = (PaymentChannel)Enum.Parse(typeof(PaymentChannel), paymentChannel),
                     Category = category,

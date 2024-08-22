@@ -12,6 +12,7 @@ namespace WebApplication1.DB
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<ChatMessage> ChatMessages { get; set; }
+        public DbSet<UserKey> UserKeys { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

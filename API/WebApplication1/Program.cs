@@ -11,15 +11,15 @@ using WebApplication1.Helpers;
 using WebApplication1.Models;
 using WebApplication1.Services.AccountService;
 using WebApplication1.Services.ChatService;
+using WebApplication1.Services.KeyService;
 using WebApplication1.Services.TransactionService;
 using WebApplication1.Services.UserService;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+//builder.Services.AddSwaggerGen();
 
 builder.Services.AddSwaggerGen(opt =>
 {
@@ -53,6 +53,7 @@ builder.Services.AddSwaggerGen(opt =>
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDb>(options =>
     options.UseSqlServer(connectionString));
+    
 
 builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<AppDb>()
@@ -90,12 +91,14 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<ITransactionService, TransactionService>();
+builder.Services.AddScoped<IKeyService, KeyService>();
 builder.Services.AddScoped<IChatService, ChatService>();
 
 
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("AdminPolicy", policy => policy.RequireRole("Admin"));
+    options.AddPolicy("User", policy => policy.RequireRole("User"));
 });
 
 builder.Services.AddCors(options =>
@@ -114,20 +117,12 @@ builder.Services.AddSignalR();
 var app = builder.Build();
 
 
-
-//using (var scope = app.Services.CreateScope())
-//{
-//    var services = scope.ServiceProvider;
-//    var userService = services.GetRequiredService<IUserService>();
-//    await userService.SeedAdminUserAsync();
-//}
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseStaticFiles();
 app.UseCors("AllowAll");
 app.UseHttpsRedirection();
 
